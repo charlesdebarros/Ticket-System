@@ -39,6 +39,8 @@ end
 group :test do
   # https://github.com/teamcapybara/capybara#setup
   gem 'capybara', '~> 3.34'
+  # https://github.com/simplecov-ruby/simplecov
+  gem 'simplecov', require: false
 end
 
 group :development do
