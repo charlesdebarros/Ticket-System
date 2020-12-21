@@ -32,6 +32,8 @@ gem 'webpacker', '~> 5.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # https://rubygems.org/gems/pry
+  gem 'pry', '~> 0.13.1'
   # https://github.com/rspec/rspec-rails/tree/4-0-maintenance
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
 end
@@ -53,4 +55,3 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
 end
-
