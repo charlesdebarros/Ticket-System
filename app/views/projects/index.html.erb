@@ -1,0 +1,11 @@
+<h1>Projects Index Page</h1>
+
+<% if @projects.any? %>
+  <% @projects.each do |project| %>
+    <h3><%= project.name %></h3>
+  <% end %>
+<% else %>
+    <h3>No projects added yet.</h3>
+<% end %>
+
+<%= link_to 'Add a project', new_project_path %>

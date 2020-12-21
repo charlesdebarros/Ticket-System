@@ -1,0 +1,15 @@
+<%= form_for(@project) do |f| %>
+  <p>
+    <%= f.label :name, placeholder: 'Project Name' %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description, placeholder: 'Your projects\'s description goes here.' %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to 'Cancel', projects_path %>
