@@ -35,3 +35,7 @@
 yarn-debug.log*
 .yarn-integrity
 coverage
+
+# Mac Desktop Services (DS) custom folder attributes file
+.DS_store
+*/*/.DS_store
