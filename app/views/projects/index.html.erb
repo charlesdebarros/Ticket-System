@@ -1,9 +1,13 @@
 <h1>Projects Index Page</h1>
-<% if @projects.any? %>
-  <% @projects.each do |project| %>
-    <h3><%= project.name %></h3>
+<div id='projects'>
+  <% if @projects.any? %>
+    <% @projects.each do |project| %>
+      <h2><%= link_to project.name, project %></h2>
+      <p><%= project.description %></p>
+    <% end %>
+  <% else %>
+    <h3>No projects added yet.</h3>
   <% end %>
-<% else %>
-  <h3>No projects added yet.</h3>
-<% end %>
-<%= link_to 'Add a project', new_project_path %>
+  <br>
+  <%= link_to 'Add a project', new_project_path %>
+</div>
