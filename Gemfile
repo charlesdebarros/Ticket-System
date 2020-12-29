@@ -5,6 +5,8 @@ ruby '2.7.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+# https://rubygems.org/gems/font_awesome5_rails
+gem 'font_awesome5_rails', '~> 1.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use postgresql as the database for Active Record
