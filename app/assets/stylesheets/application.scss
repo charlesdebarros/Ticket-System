@@ -46,3 +46,37 @@
     }
   }
 }
+
+a.new, a.edit, a.delete {
+  @extend .btn;
+
+  &:before {
+    font-family: 'Font Awesome 5 Free';
+    @extend .fas;
+    padding-right: 0.5em;
+  }
+}
+
+a.new {
+  @extend .btn-outline-success;
+
+  &:before {
+    @extend .fa-plus;
+  }
+}
+
+a.edit {
+  @extend .btn-outline-primary;
+
+  &:before {
+    @extend .fa-pencil-alt;
+  }
+}
+
+a.delete {
+  @extend .btn-outline-danger;
+
+  &:before {
+    @extend .fa-trash;
+  }
+}
