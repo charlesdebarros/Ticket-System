@@ -17,12 +17,15 @@ gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
+# https://rubygems.org/gems/simple_form
+gem 'simple_form', '~> 5.0', '>= 5.0.3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
