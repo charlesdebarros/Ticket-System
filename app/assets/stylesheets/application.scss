@@ -91,3 +91,7 @@ a.delete {
     @extend .fa-trash;
   }
 }
+
+form {
+  max-width: 500px;
+}
