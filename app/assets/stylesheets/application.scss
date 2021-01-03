@@ -14,9 +14,9 @@
  *= require_self
  */
 
-@import 'bootstrap/scss/bootstrap';
-@import 'font_awesome5_webfont';
-@import 'projects';
+@import "bootstrap/scss/bootstrap";
+@import "font_awesome5_webfont";
+@import "projects";
 
 body {
   font-size: 16px;
@@ -38,7 +38,12 @@ header {
     margin-top: 20px;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     max-width: 55%;
   }
 
@@ -58,11 +63,13 @@ header {
   }
 }
 
-a.new, a.edit, a.delete {
+a.new,
+a.edit,
+a.delete {
   @extend .btn;
 
   &:before {
-    font-family: 'Font Awesome 5 Free';
+    font-family: "Font Awesome 5 Free";
     @extend .fas;
     padding-right: 0.5em;
   }
@@ -94,4 +101,68 @@ a.delete {
 
 form {
   max-width: 500px;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    header {
+      display: flex;
+      max-width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0;
+      &:first-child {
+        width: 100%;
+        margin-top: 0;
+        padding-bottom: 15px;
+      }
+      ul.actions {
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        margin: 0;
+        li {
+          a {
+            margin: 0;
+          }
+        }
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        max-width: 100%;
+        text-align: center;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+    p {
+      margin: 15px;
+    }
+
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
+    h6 a {
+      padding-left: 15px;
+    }
+    .btn {
+      margin-left: 15px;
+    }
+    form {
+      margin: 15px;
+      input[type="submit"] {
+        margin: 15px 0 0 0;
+      }
+    }
+  }
 }
