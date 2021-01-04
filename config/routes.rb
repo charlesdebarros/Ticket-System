@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   # see https://guides.rubyonrails.org/routing.html
 
   root 'projects#index'
-  resources :projects
+  resources :projects do
+    resources :tickets
+  end
 end
