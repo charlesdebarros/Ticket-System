@@ -8,7 +8,17 @@
 
 projects = Project.create(
   [
-    { name: 'VSCode', description: 'Code Editing. Redefined!' },
-    { name: 'Atom', description: 'A hackable text editor for the 21st Century' }
+    {
+      name: 'VSCode',
+      description: 'Code Editing. Redefined!'
+    },
+    {
+      name: 'Atom',
+      description: 'A hackable text editor for the 21st Century'
+    },
+    {
+      name: 'A very, very, very, very, very, very, very, very, very long project name',
+      description: 'A not so long descript though!'
+    }
   ]
 )
