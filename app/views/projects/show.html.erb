@@ -23,3 +23,11 @@
 <div>
   <%= link_to 'Back', :back, class: 'btn btn-outline-dark' %>
 </div>
+<div id="tickets">
+  <% @project.tickets.each do |ticket| %>
+    <li>
+      #<%= ticket.id %> -
+      <%= link_to ticket.name, [@project, ticket] %>
+    </li>
+  <% end %>
+</div>
