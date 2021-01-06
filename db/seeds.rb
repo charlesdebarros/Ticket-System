@@ -22,3 +22,23 @@ projects = Project.create(
     }
   ]
 )
+
+tickets = Ticket.create(
+  [
+    {
+      name: 'Issues with auto-formatting code',
+      description: 'Auto-formatting not working with PHP files.',
+      project_id: 3
+    },
+    {
+      name: 'Freezing when saving a Javascript file.',
+      description: 'The EDI freezes when saving a .js file. Restarted need to open the EDI again.',
+      project_id: 3
+    },
+    {
+      name: 'Not recognising colour theme',
+      description: 'Monokai theme not display correctly when using app. Reverts to original theme.',
+      project_id: 3
+    }
+  ]
+)
