@@ -3,7 +3,7 @@
 # Manages tickets associated to single projects
 class TicketsController < ApplicationController
   before_action :set_project
-  before_action :set_ticket, only: %i[show edit update delete]
+  before_action :set_ticket, only: %i[show edit update destroy]
 
   def new
     @ticket = @project.tickets.build
@@ -33,6 +33,13 @@ class TicketsController < ApplicationController
       flash.now[:alert] = 'Unable to update ticket.'
       render 'edit'
     end
+  end
+
+  def destroy
+    @ticket.destroy
+    flash[:notice] = 'Ticket successfully deleted.'
+
+    redirect_to @project
   end
 
   private
