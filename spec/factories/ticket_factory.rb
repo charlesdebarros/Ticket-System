@@ -3,8 +3,8 @@
 # This will guess the Ticket class
 FactoryBot.define do
   factory :ticket do
-    name { 'MyString' }
-    description { 'MyText' }
+    name { 'Ticket #1 name' }
+    description { 'This is, somehow, a reasonably half decent ticket description' }
     project { nil }
   end
 end

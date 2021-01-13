@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Manages tickets associated to single projects
 class TicketsController < ApplicationController
   before_action :set_project
   before_action :set_ticket, only: %i[show edit update delete]
@@ -19,6 +20,18 @@ class TicketsController < ApplicationController
     else
       flash[:alert] = 'Unable to create your ticket'
       render 'new'
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @ticket.update(ticket_params)
+      flash[:notice] = 'Ticket successfully updated.'
+      redirect_to [@project, @ticket]
+    else
+      flash.now[:alert] = 'Unable to update ticket.'
+      render 'edit'
     end
   end
 
