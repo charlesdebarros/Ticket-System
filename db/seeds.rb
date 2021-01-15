@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-projects = Project.create(
+Project.create(
   [
     {
       name: 'VSCode',
@@ -23,7 +23,7 @@ projects = Project.create(
   ]
 )
 
-tickets = Ticket.create(
+Ticket.create(
   [
     {
       name: 'Issues with auto-formatting code',

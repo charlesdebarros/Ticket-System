@@ -66,4 +66,8 @@ RSpec.configure do |config|
 
   # FactoryBot config line
   config.include FactoryBot::Syntax::Methods
+
+  # including Warden
+  config.include Warden::Test::Helpers, type: :feature
+  config.after(type: :feature) { Warden.test_reset! }
 end
