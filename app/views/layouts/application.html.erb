@@ -26,9 +26,24 @@
             <li class="nav-item active">
               <a class="nav-link" href="<%= projects_path %>">Projects</a>
             </li>
-            <li class="<%= 'active' if current_page?("/users/sign_up") %>">
-              <%= link_to 'Sign up', new_user_registration_path %>
-            </li>
+            <% if user_signed_in? %>
+              <div class="navbar-right">
+                <p class="navbar-text">
+                  Signed in as <%= current_user.email %>
+                </p>
+                <li class='navbar-text ml-2'>
+                  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+                </li>
+              </div>
+            <% end %>
+            <% unless user_signed_in? %>
+              <li class="<%= 'active' if current_page?("/users/sign_up") %>">
+                <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+              </li>
+              <li class="<%= 'active' if current_page?("/users/sign_in") %>">
+                <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
