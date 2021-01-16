@@ -6,6 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create(
+  {
+    id: 999,
+    email: 'admin@email.com',
+    password: 'Password123',
+    password_confirmation: 'Password123'
+  }
+)
+
 Project.create(
   [
     {
@@ -28,17 +37,22 @@ Ticket.create(
     {
       name: 'Issues with auto-formatting code',
       description: 'Auto-formatting not working with PHP files.',
-      project_id: 3
+      project_id: 3,
+      author_id: 999
     },
     {
       name: 'Freezing when saving a Javascript file.',
       description: 'The EDI freezes when saving a .js file. Restarted need to open the EDI again.',
-      project_id: 3
+      project_id: 3,
+      author_id: 999
     },
     {
       name: 'Not recognising colour theme',
       description: 'Monokai theme not display correctly when using app. Reverts to original theme.',
-      project_id: 3
+      project_id: 3,
+      author_id: 999
     }
   ]
 )
+
+

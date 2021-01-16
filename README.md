@@ -16,6 +16,7 @@ A simple ticket generator and tracking system built using Ruby on Rails.
 * [SimpleCov](https://rubygems.org/gems/simplecov)
 * [Pry](https://rubygems.org/gems/pry)
 * [RubyCritic](https://rubygems.org/gems/rubycritic)
+* [Devise](https://rubygems.org/search?query=devise)
 
 ### Downloading (or Cloning) and running the app
 
