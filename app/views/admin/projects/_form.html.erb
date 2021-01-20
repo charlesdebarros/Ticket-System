@@ -1,0 +1,7 @@
+<%= simple_form_for([:admin, project]) do |f| %>
+  <%= f.input :name, placeholder: 'Project Name' %>
+  <%= f.input :description, placeholder: 'Your projects\'s description goes here.' %>
+  <%= f.button :submit, class: 'btn btn-outline-primary' %>
+<% end %>
+<br>
+<%= link_to 'Cancel', projects_path, class: 'btn btn-outline-dark' %>
