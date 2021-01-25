@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Holds helper methods available everywhere in the application.
 module ApplicationHelper
   def title(*parts)
     return if parts.empty?
@@ -17,5 +18,9 @@ module ApplicationHelper
     when 'error' then 'alert alert-danger'
     when 'alert' then 'alert alert-danger'
     end
+  end
+
+  def admins_only(&block)
+    block.call if current_user.try(:admin?)
   end
 end

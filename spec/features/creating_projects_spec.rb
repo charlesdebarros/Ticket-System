@@ -7,7 +7,7 @@ RSpec.feature 'Users can create new projects' do
     login_as(FactoryBot.create(:user, :admin))
     visit '/'
 
-    click_link 'Add a project'
+    click_link 'Add a Project'
   end
 
   scenario 'with valid attributes' do
