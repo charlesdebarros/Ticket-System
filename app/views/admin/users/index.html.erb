@@ -1,0 +1,17 @@
+<header>
+  <h1>Users</h1>
+</header>
+<ul class='actions'>
+  <li>
+    <%= link_to 'New User', new_admin_user_path, class: 'new' %>
+  </li>
+</ul>
+<% if @users.any? %>
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= link_to user.email, [:admin, user] %></li>
+    <% end%>
+  </ul>
+<% else %>
+  <h3>No users available yet.</h3>
+<% end %>

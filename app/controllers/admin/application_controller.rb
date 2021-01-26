@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-# Admin Namespacing controller
-
 module Admin
+  # Admin Namespacing controller
   class ApplicationController < ApplicationController
     before_action :authorise_admin!
     def index; end
