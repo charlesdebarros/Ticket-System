@@ -19,4 +19,11 @@ RSpec.feature 'Admins can create new users: ' do
     click_button 'Create User'
     expect(page).to have_content('User successfully created.')
   end
+
+  scenario 'with invalid credentials' do
+    fill_in 'Email', with: ''
+    fill_in 'Password', with: ''
+    click_button 'Create User'
+    expect(page).to have_content('Unable to create the user')
+  end
 end
