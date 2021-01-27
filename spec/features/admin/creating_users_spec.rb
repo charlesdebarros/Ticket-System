@@ -26,4 +26,13 @@ RSpec.feature 'Admins can create new users: ' do
     click_button 'Create User'
     expect(page).to have_content('Unable to create the user')
   end
+
+  scenario 'when a new user is an admin' do
+    fill_in 'Email', with: 'admin@example.com'
+    fill_in 'Password', with: 'Password123'
+    check 'Is an admin?'
+    click_button 'Create User'
+    expect(page).to have_content('User successfully created.')
+    expect(page).to have_content('admin@example.com (Admin)')
+  end
 end

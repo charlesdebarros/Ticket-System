@@ -1,5 +1,6 @@
 <%= simple_form_for [:admin, user] do |f| %>
   <%= f.input :email, placeholder: "New user's email" %>
   <%= f.input :password, placeholder: "New user's password" %>
+  <%= f.input :admin, label: 'Is an admin?' %>
   <%= f.button :submit, class: 'btn btn-outline-primary' %>
 <% end %>
