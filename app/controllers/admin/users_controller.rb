@@ -3,10 +3,10 @@
 module Admin
   # A Users controller for the Admin namespacing
   class UsersController < Admin::ApplicationController
-    before_action :set_user, only: %w[show edit update destroy]
+    before_action :set_user, only: %w[show edit update destroy archive]
 
     def index
-      @users = User.order(:email)
+      @users = User.excluding_archived.order(:email)
     end
 
     def show; end
@@ -40,6 +40,16 @@ module Admin
         flash[:alert] = 'Unable to update user.'
         render 'edit'
       end
+    end
+
+    def archive
+      if @user == current_user
+        flash[:alert] = 'You cannot archive yourself!'
+      else
+        @user.archive
+        flash[:notice] = 'User has been successfully archived.'
+      end
+      redirect_to admin_users_path
     end
 
     private
