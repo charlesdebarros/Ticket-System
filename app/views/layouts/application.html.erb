@@ -31,15 +31,15 @@
             <li class="nav-item active">
               <a class="nav-link" href="<%= projects_path %>">Projects</a>
             </li>
-            <% unless user_signed_in? %>
-              <li class="<%= 'active' if current_page?("/users/sign_up") %>">
-                <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
-              </li>
-              <li class="<%= 'active' if current_page?("/users/sign_in") %>">
-                <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
-              </li>
-            <% end %>
             <div class="signing-options">
+              <% unless user_signed_in? %>
+                <li class="<%= 'active' if current_page?("/users/sign_up") %>">
+                  <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+                </li>
+                <li class="<%= 'active' if current_page?("/users/sign_in") %>">
+                  <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+                </li>
+              <% end %>
               <% if user_signed_in? %>
                 <div class="navbar-right">
                   <p class="navbar-text">

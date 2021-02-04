@@ -1,10 +1,14 @@
+# frozen_string_literal: true
+
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   def index
     @projects = Project.all.order('created_at DESC')
   end
 
-  def show; end
+  def show
+    authorize @project, :show?
+  end
 
   def edit; end
 
