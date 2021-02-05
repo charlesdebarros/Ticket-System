@@ -3,7 +3,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   def index
-    @projects = Project.all.order('created_at DESC')
+    @projects = policy_scope(Project)
   end
 
   def show
