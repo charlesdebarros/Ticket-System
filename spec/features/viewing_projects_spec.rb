@@ -11,6 +11,13 @@ RSpec.feature 'User can view projects' do
     assign_role!(user, :viewer, project)
   end
 
+  scenario 'unless they do not have permission' do
+    FactoryBot.create(:project, name: 'Hidden')
+    visit '/'
+
+    expect(page).not_to have_content('Hidden')
+  end
+
   scenario 'with the project details' do
     visit '/'
     click_link 'Sublime Text 3'
