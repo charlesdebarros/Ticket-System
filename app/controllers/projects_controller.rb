@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   def edit; end
 
   def update
+    authorize @project, :update?
     if @project.update(project_params)
       flash[:notice] = 'Project updated successfully.'
       redirect_to @project
