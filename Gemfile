@@ -18,7 +18,7 @@ gem 'puma', '~> 5.0'
 # https://rubygems.org/gems/pundit
 gem 'pundit', '~> 2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.2', '>= 6.1.2.1'
+gem 'rails', '~> 6.1.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6.0.0'
 # https://rubygems.org/gems/simple_form
