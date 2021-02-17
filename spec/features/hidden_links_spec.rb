@@ -14,6 +14,10 @@ RSpec.feature 'Users can only see the appropriate links:' do
     end
   end
 
+  let(:ticket) do
+    FactoryBot.create(:ticket, project: project, author: user)
+  end
+
   context 'non-admin users (project viewers)' do
     before do
       login_as(user)
@@ -34,6 +38,16 @@ RSpec.feature 'Users can only see the appropriate links:' do
       visit project_path(project)
       expect(page).not_to have_link('Delete Project')
     end
+
+    scenario 'cannot see "New Ticket" link' do
+      visit project_path(project)
+      expect(page).not_to have_link('New Ticket')
+    end
+
+    scenario 'cannot see "Edit Ticket" link' do
+      visit project_ticket_path(project, ticket)
+      expect(page).not_to have_link('Edit Ticket')
+    end
   end
 
   context 'admin users' do
@@ -52,6 +66,16 @@ RSpec.feature 'Users can only see the appropriate links:' do
     scenario 'can see the "Delete Project" link' do
       visit project_path(project)
       expect(page).to have_link('Delete Project')
+    end
+
+    scenario 'can see the "New Ticket" link' do
+      visit project_path(project)
+      expect(page).to have_link('New Ticket')
+    end
+
+    scenario 'can see "Edit Ticket" link ' do
+      visit project_ticket_path(project, ticket)
+      expect(page).to have_link('Edit Ticket')
     end
   end
 end

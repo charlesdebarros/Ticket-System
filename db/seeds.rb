@@ -29,29 +29,11 @@ unless User.exists?(email: 'viewer@email.com')
   )
 end
 
-
 ['VSCode', 'Atom', 'Brackets', 'RubyMine', 'TextMate', 'Sublime Text', 'A very, very, very, very, very, very, very, very, very long project name'].each do |name|
   unless Project.exists?(name: name)
     Project.create!(name: name, description: "A simple sample project about #{name}")
   end
 end
-
-# Project.create(
-#   [
-#     {
-#       name: 'VSCode',
-#       description: 'Code Editing. Redefined!'
-#     },
-#     {
-#       name: 'Atom',
-#       description: 'A hackable text editor for the 21st Century'
-#     },
-#     {
-#       name: 'A very, very, very, very, very, very, very, very, very long project name',
-#       description: 'A not so long descript though!'
-#     }
-#   ]
-# )
 
 Ticket.create(
   [
@@ -59,21 +41,19 @@ Ticket.create(
       name: 'Issues with auto-formatting code',
       description: 'Auto-formatting not working with PHP files.',
       project_id: Project.first.id,
-      author_id: User.first.id
+      author_id: 999
     },
     {
       name: 'Freezing when saving a Javascript file.',
       description: 'The EDI freezes when saving a .js file. Restarted need to open the EDI again.',
       project_id: Project.first.id,
-      author_id: User.first.id
+      author_id: 998
     },
     {
       name: 'Not recognising colour theme',
-      description: 'Monokai theme not display correctly when using app. Reverts to original theme.',
+      description: 'Monokai theme not displaying correctly when using app. Reverts to original.',
       project_id: Project.first.id,
-      author_id: User.first.id
+      author_id: 998
     }
   ]
 )
-
-

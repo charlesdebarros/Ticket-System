@@ -11,7 +11,7 @@ RSpec.feature 'User can create new tickets' do
     assign_role!(user, :editor, project)
 
     visit project_path(project)
-    click_link 'Create a New Ticket'
+    click_link 'New Ticket'
   end
 
   scenario 'with valid attributes' do

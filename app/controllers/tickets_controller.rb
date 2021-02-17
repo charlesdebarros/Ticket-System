@@ -5,13 +5,13 @@ class TicketsController < ApplicationController
   before_action :set_project
   before_action :set_ticket, only: %i[show edit update destroy]
 
+  def show
+    authorize @ticket, :show?
+  end
+
   def new
     @ticket = @project.tickets.build
     authorize @ticket, :create?
-  end
-
-  def show
-    authorize @ticket, :show?
   end
 
   def create
@@ -31,6 +31,8 @@ class TicketsController < ApplicationController
   def edit; end
 
   def update
+    authorize @ticket, :update?
+
     if @ticket.update(ticket_params)
       flash[:notice] = 'Ticket successfully updated.'
       redirect_to [@project, @ticket]

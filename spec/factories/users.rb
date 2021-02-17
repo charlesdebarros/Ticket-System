@@ -9,4 +9,12 @@ FactoryBot.define do
       admin { true }
     end
   end
+
+  factory :user_nil do
+    sequence(:email) { nil }
+    password { nil }
+    trait :admin do
+      admin { false }
+    end
+  end
 end
