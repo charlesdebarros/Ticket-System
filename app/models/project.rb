@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class Project < ApplicationRecord
-  validates :name, presence: true
-
   has_many :tickets, dependent: :delete_all
   has_many :roles,   dependent: :delete_all
+
+  validates :name, presence: true
 
   def has_member?(user)
     roles.exists?(user_id: user)
