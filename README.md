@@ -17,6 +17,7 @@ A simple ticket generator and tracking system built using Ruby on Rails.
 * [Pry](https://rubygems.org/gems/pry)
 * [RubyCritic](https://rubygems.org/gems/rubycritic)
 * [Devise](https://rubygems.org/search?query=devise)
+* [Pundit](https://rubygems.org/gems/pundit)
 
 ### Downloading (or Cloning) and running the app
 
