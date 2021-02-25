@@ -18,6 +18,7 @@ module Admin
 
     def create
       @user = User.new(user_params)
+      build_roles_for(@user)
 
       if @user.save
         flash[:notice] = 'User successfully created.'
@@ -36,10 +37,7 @@ module Admin
 
       User.transaction do
         @user.roles.clear
-        role_data = params.fetch(:roles, [])
-        role_data.each do |project_id, role_name|
-          role_name.present? && @user.roles.build(project_id: project_id, role: role_name)
-        end
+        build_roles_for(@user)
 
         if @user.update(user_params)
           flash[:notice] = 'User successfully updated.'
@@ -70,6 +68,13 @@ module Admin
 
     def set_projects
       @projects = Project.order(:name)
+    end
+
+    def build_roles_for(user)
+      role_data = params.fetch(:roles, [])
+      role_data.each do |project_id, role_name|
+        role_name.present? && @user.roles.build(project_id: project_id, role: role_name)
+      end
     end
 
     def user_params
