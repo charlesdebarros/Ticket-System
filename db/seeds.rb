@@ -29,7 +29,7 @@ unless User.exists?(email: 'viewer@email.com')
   )
 end
 
-['VSCode', 'Atom', 'Brackets', 'RubyMine', 'TextMate', 'Sublime Text', 'A very, very, very, very, very, very, very, very, very long project name'].each do |name|
+['VSCode', 'Atom', 'Brackets', 'RubyMine', 'TextMate', 'Sublime Text', 'A very, very, very, very long project name'].each do |name|
   unless Project.exists?(name: name)
     Project.create!(name: name, description: "A simple sample project about #{name}")
   end
