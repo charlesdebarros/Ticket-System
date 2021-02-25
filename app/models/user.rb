@@ -6,6 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 
+  has_many :roles
+
   scope :excluding_archived, -> { where(archived_at: nil) }  # ->, i.e., lambda
 
   def to_s
@@ -22,5 +24,9 @@ class User < ApplicationRecord
 
   def inactive_message
     archived_at.nil? ? super : :archived
+  end
+
+  def role_on(project)
+    roles.find_by(project_id: project).try(:name)
   end
 end
