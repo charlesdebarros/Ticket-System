@@ -32,3 +32,11 @@ If you would like to have a go at Ticket System, please follow the following ste
 1. Finally, run `rails server` to start the app and go to `localhost:3000` to see the project.
 
 Have fun!
+
+### The Application
+
+In a nutshell, it is a projects' ticket system where user have different levels of access according to the roles they are assigned in each project. 
+
+Only Admins have free access to all part of the application. Also, only Admins have access to the Users Management screen.
+
+Access is given on a project basis. Users ability to create, view, edit, update and delete projects vary from project to project. The same applies to tickets related to projects. 
