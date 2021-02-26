@@ -20,7 +20,7 @@ class TicketsController < ApplicationController
     authorize @ticket, :create?
 
     if @ticket.save
-      flash[:notice] = 'Ticket successfull created'
+      flash[:notice] = 'Ticket successfully created'
       redirect_to [@project, @ticket]
     else
       flash[:alert] = 'Unable to create your ticket'
@@ -64,6 +64,6 @@ class TicketsController < ApplicationController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:name, :description)
+    params.require(:ticket).permit(:name, :description, :attachment)
   end
 end
