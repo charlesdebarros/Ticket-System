@@ -6,7 +6,7 @@ ruby '2.7.3'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 # https://rubygems.org/gems/carrierwave
-gem 'carrierwave', '~> 2.2'
+gem 'carrierwave', '~> 2.2', '>= 2.2.1'
 # https://rubygems.org/gems/devise
 gem 'devise', '~> 4.7', '>= 4.7.3'
 # https://rubygems.org/gems/font_awesome5_rails
@@ -53,7 +53,7 @@ end
 
 group :test do
   # https://github.com/teamcapybara/capybara#setup
-  gem 'capybara', '~> 3.34', '>= 3.34.0'
+  gem 'capybara', '~> 3.35', '>= 3.35.3'
   # https://github.com/simplecov-ruby/simplecov
   gem 'simplecov', require: false
 end
